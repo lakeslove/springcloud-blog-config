@@ -1,0 +1,32 @@
+logging.level:
+  org.springframework: TRACE
+  com: TRACE
+server:
+  port: 8080
+  servlet:
+    application-display-name: blog
+    session:
+      timeout: 40m
+      cookie:
+        name: blog
+        http-only: true
+  #因为InternalResourceViewResolver配置中已经设置了，所以这里不再做统一设置
+  #spring.mvc.view.prefix: /templates/view/
+  #spring.mvc.view.suffix: .jsp
+spring:
+  servlet.multipart.max-file-size: 10MB
+  freemarker.template-loader-path: classpath:/freemarker/
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/blog?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: password
+mybatis.config-location: classPath:xml/mybatis.xml
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 10000
+        readTimeout: 60000
+
+

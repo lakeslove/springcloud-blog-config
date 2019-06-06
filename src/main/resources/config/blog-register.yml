@@ -1,0 +1,25 @@
+logging.level:
+  org.springframework: TRACE
+  com: TRACE
+server:
+  port: 8081
+spring:
+  servlet.multipart.max-file-size: 10MB
+  freemarker.template-loader-path: classpath:/freemarker/
+  mail:
+    host: smtp.163.com
+    username: testSpringEmail@163.com
+    password: lakeslove123
+    properties:
+      mail.smtp:
+        auth: true
+        port: 25
+        timeout: 25000
+        starttls.enable: true
+        starttls.required: true
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/blog?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+    username: root
+    password: password
+mybatis.config-location: classPath:xml/mybatis.xml
